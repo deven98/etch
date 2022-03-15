@@ -33,4 +33,17 @@ class EtchPaint {
           ..shader = shader
           ..colorFilter = colorFilter
           ..imageFilter = imageFilter;
+
+  @override
+  bool operator ==(Object other) {
+    if (other.runtimeType != runtimeType) {
+      return false;
+    }
+
+    var e = other as EtchPaint;
+    return paint == e.paint;
+  }
+
+  @override
+  int get hashCode => paint.hashCode;
 }

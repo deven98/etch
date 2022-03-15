@@ -42,15 +42,24 @@ class _DemoPageState extends State<DemoPage> {
               ],
             ),
             EtchPath(
-                etchPathElements: [
-                  EtchPathMoveTo(point: Offset(0, 0)),
-                  EtchPathLine(point: Offset(110, 0)),
-                  EtchPathLine(point: Offset(110, 110)),
-                  EtchPathClose(),
-                ],
-                etchPaint: EtchPaint(
-                  style: PaintingStyle.stroke,
-                )),
+              etchPathElements: [
+                EtchPathMoveTo(point: Offset(0, 0)),
+                EtchPathLine(point: Offset(110, 0)),
+                EtchPathLine(point: Offset(110, 110)),
+                EtchPathClose(),
+              ],
+              etchPaint: EtchPaint(
+                style: PaintingStyle.stroke,
+              ),
+            ),
+            EtchRect.alignment(
+              topLeftAlignment: Offset.zero,
+              bottomRightAlignment: Offset(1, 1),
+            ),
+            EtchOval.alignment(
+              topLeftAlignment: Offset(-1, -1),
+              bottomRightAlignment: Offset(0, 0),
+            ),
           ],
           child: Container(
             width: 100.0,
