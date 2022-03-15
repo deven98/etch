@@ -1,3 +1,5 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* Initial release
+* Added basic canvas elements and path elements
+* Added example

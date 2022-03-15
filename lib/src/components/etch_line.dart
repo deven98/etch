@@ -68,6 +68,7 @@ class EtchLine extends EtchElement {
     return _start != e._start ||
         _end != e._end ||
         _startAlignment != e._startAlignment ||
+        etchPaint != e.etchPaint ||
         _endAlignment != e._endAlignment;
   }
 }
