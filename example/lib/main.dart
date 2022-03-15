@@ -41,6 +41,16 @@ class _DemoPageState extends State<DemoPage> {
                 EtchLine(start: Offset(0, 50), end: Offset(100, 100)),
               ],
             ),
+            EtchPath(
+                etchPathElements: [
+                  EtchPathMoveTo(point: Offset(0, 0)),
+                  EtchPathLine(point: Offset(110, 0)),
+                  EtchPathLine(point: Offset(110, 110)),
+                  EtchPathClose(),
+                ],
+                etchPaint: EtchPaint(
+                  style: PaintingStyle.stroke,
+                )),
           ],
           child: Container(
             width: 100.0,

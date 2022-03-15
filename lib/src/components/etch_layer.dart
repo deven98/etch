@@ -42,13 +42,19 @@ class EtchLayer extends EtchElement {
   }
 
   @override
-  bool shouldRepaint(covariant EtchLayer oldElement) {
-    if (oldElement.etchElements.length != etchElements.length) {
+  bool shouldRepaint(covariant EtchElement oldElement) {
+    if (oldElement.runtimeType != runtimeType) {
+      return true;
+    }
+
+    var e = oldElement as EtchLayer;
+
+    if (e.etchElements.length != etchElements.length) {
       return true;
     }
 
     for (int i = 0; i < etchElements.length; i++) {
-      if (etchElements[i].shouldRepaint(oldElement.etchElements[i])) {
+      if (etchElements[i].shouldRepaint(e.etchElements[i])) {
         return true;
       }
     }
