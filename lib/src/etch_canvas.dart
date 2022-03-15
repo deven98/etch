@@ -2,14 +2,20 @@ import 'package:etch/src/components/etch_element.dart';
 import 'package:flutter/material.dart';
 
 class EtchCanvas extends StatelessWidget {
-  final List<EtchElement> children;
+  final List<EtchElement> etchElements;
+  final Widget? child;
 
-  const EtchCanvas({Key? key, required this.children}) : super(key: key);
+  const EtchCanvas({
+    Key? key,
+    this.child,
+    required this.etchElements,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      painter: EtchPainter(elements: children),
+      painter: EtchPainter(elements: etchElements),
+      child: child,
     );
   }
 }
@@ -28,13 +34,15 @@ class EtchPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant EtchPainter oldDelegate) {
-    if(oldDelegate.elements.length != elements.length) {
+    if (oldDelegate.elements.length != elements.length) {
+      print('true');
       return true;
     }
 
-    for(int i = 0; i < elements.length; i++) {
-      if(elements[i].shouldRepaint(oldDelegate.elements[i])) {
-       return true;
+    for (int i = 0; i < elements.length; i++) {
+      if (elements[i].shouldRepaint(oldDelegate.elements[i])) {
+        print('true');
+        return true;
       }
     }
 

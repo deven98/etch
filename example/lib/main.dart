@@ -12,12 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const DemoPage()
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const DemoPage());
   }
 }
 
@@ -32,12 +31,18 @@ class _DemoPageState extends State<DemoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: EtchCanvas(
-        children: [
-          EtchLine(Offset(0,0), Offset(100,100), Paint()..color = Colors.black..strokeWidth = 10.0),
-        ],
+      body: Center(
+        child: EtchCanvas(
+          etchElements: [
+            EtchLine.alignment(
+                startAlignment: Offset(0.5, 0), endAlignment: Offset(1, 1)),
+          ],
+          child: Container(
+            width: 100.0,
+            height: 100.0,
+          ),
+        ),
       ),
     );
   }
 }
-
