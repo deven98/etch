@@ -52,20 +52,24 @@ class _DemoPageState extends State<DemoPage> {
                 style: PaintingStyle.stroke,
               ),
             ),
-            EtchRect.alignment(
-              topLeftAlignment: Offset.zero,
-              bottomRightAlignment: Offset(1, 1),
-            ),
-            EtchOval.alignment(
-              topLeftAlignment: Offset(-1, -1),
-              bottomRightAlignment: Offset(0, 0),
-            ),
+            // EtchRect.alignment(
+            //   topLeftAlignment: Offset.zero,
+            //   bottomRightAlignment: Offset(1, 1),
+            // ),
+            // EtchOval.alignment(
+            //   topLeftAlignment: Offset(-1, -1),
+            //   bottomRightAlignment: Offset(0, 0),
+            // ),
             // EtchArc.alignment(
             //   topLeftAlignment: Offset(-1, -1),
             //   bottomRightAlignment: Offset(1, 1),
             //   startAngle: 0,
             //   sweepAngle: 2,
             // ),
+            EtchCircle.alignment(
+              centerAlignment: Offset(-1, -1),
+              radius: 50.0,
+            ),
           ],
           child: Container(
             width: 100.0,
