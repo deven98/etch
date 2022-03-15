@@ -35,13 +35,11 @@ class EtchPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant EtchPainter oldDelegate) {
     if (oldDelegate.elements.length != elements.length) {
-      print('true');
       return true;
     }
 
     for (int i = 0; i < elements.length; i++) {
       if (elements[i].shouldRepaint(oldDelegate.elements[i])) {
-        print('true');
         return true;
       }
     }

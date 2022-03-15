@@ -34,8 +34,13 @@ class _DemoPageState extends State<DemoPage> {
       body: Center(
         child: EtchCanvas(
           etchElements: [
-            EtchLine.alignment(
-                startAlignment: Offset(0.5, 0), endAlignment: Offset(1, 1)),
+            EtchLayer.scale(
+              scale: Offset(1, 2),
+              etchElements: [
+                EtchLine(start: Offset(0, 0), end: Offset(100, 100)),
+                EtchLine(start: Offset(0, 50), end: Offset(100, 100)),
+              ],
+            ),
           ],
           child: Container(
             width: 100.0,
