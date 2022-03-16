@@ -95,6 +95,37 @@ and the Flutter guide for
     ),
 ```
 
+* Easy animations with `TweenAnimationBuilder`
+
+Add animations easily using `TweenAnimationBuilder` or using normal animation controllers without
+having to pass down progress or having
+
+```dart
+    TweenAnimationBuilder<double>(
+      duration: const Duration(seconds: 1),
+      tween: Tween(begin: 0, end: 2 * pi),
+      builder: (context, val, _) {
+        return EtchCanvas(
+          etchElements: [
+            EtchLayer.rotate(
+              rotateZ: val,
+              etchElements: [
+                EtchRect.alignment(
+                  topLeftAlignment: Offset(-1, -1),
+                  bottomRightAlignment: Offset(1, 1),
+                ),
+              ],
+            ),
+          ],
+          child: const SizedBox(
+            width: 100.0,
+            height: 100.0,
+          ),
+        );
+      }
+    ),
+```
+
 ## Getting started
 
 * To get started, add an `EtchCanvas` to your app:
@@ -128,6 +159,32 @@ alignments. For alignments (-1, -1) is the top left while (1, 1) is the bottom r
               sweepAngle: 2,
             ),
         ],
+    ),
+```
+
+* Use `EtchStyle` to modify paint properties.
+
+```dart
+    EtchPath(
+      etchPathElements: [
+        //...
+      ],
+      etchStyle: EtchStyle(
+        style: PaintingStyle.stroke,
+      ),
+    ),
+```
+
+You can also supply your own `Paint` object using `EtchStyle.raw()`.
+
+```dart
+    EtchPath(
+      etchPathElements: [
+        //...
+      ],
+      etchStyle: EtchStyle.raw(
+        Paint()..color = Colors.black..// add your props,
+      ),
     ),
 ```
 
