@@ -11,7 +11,7 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-# ✍️Etch
+# ✍️ Etch
 
 ### A Simplified, Declarative Implementation Of CustomPaint For Flutter
 
@@ -34,7 +34,7 @@ and the Flutter guide for
     ),
 ```
 
-![](https://github.com/deven98/etch/blob/master/images/basic_example.png)
+<img align="right" width="150" height="100" src="https://github.com/deven98/etch/blob/master/images/basic_example.png">
 
 * Use either points or alignments to define points everywhere
 
