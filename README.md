@@ -68,20 +68,24 @@ and the Flutter guide for
 
 ```dart
     EtchCanvas(
-      etchPathElements: [
-        EtchPathMoveTo(point: Offset(0, 0)),
-        EtchPathAddPolygon.alignment(
-          pointAlignments: [
-            Offset(-1, -1),
-            Offset(1, -1),
-            Offset(1, 1),
+      etchElements: [
+        EtchPath(
+          etchPathElements: [
+            EtchPathMoveTo(point: Offset(0, 0)),
+            EtchPathAddPolygon.alignment(
+              pointAlignments: [
+                Offset(-1, -1),
+                Offset(1, -1),
+                Offset(1, 1),
+              ],
+            ),
+            EtchPathQuadraticBezierTo.alignment(
+              controlPointAlignment: Offset(1, 0.75),
+              endPointAlignment: Offset(-1, 1),
+            ),
+            EtchPathClose(),
           ],
         ),
-        EtchPathQuadraticBezierTo.alignment(
-          controlPointAlignment: Offset(1, 0.75),
-          endPointAlignment: Offset(-1, 1),
-        ),
-        EtchPathClose(),
       ],
       child: SizedBox(
         width: 100.0,
