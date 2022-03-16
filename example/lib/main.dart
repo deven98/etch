@@ -41,6 +41,15 @@ class _DemoPageState extends State<DemoPage> {
                 EtchLine(start: Offset(0, 50), end: Offset(100, 100)),
               ],
             ),
+            // EtchLayer(
+            //   transform: Matrix4.identity(),
+            //   etchElements: [
+            //     EtchRect.alignment(
+            //       topLeftAlignment: Offset(-1, -1),
+            //       bottomRightAlignment: Offset(1, 1),
+            //     ),
+            //   ],
+            // ),
             EtchPath(
               etchPathElements: [
                 EtchPathMoveTo(point: Offset(0, 0)),
@@ -66,8 +75,8 @@ class _DemoPageState extends State<DemoPage> {
             //   startAngle: 0,
             //   sweepAngle: 2,
             // ),
-            // EtchCircle.alignment(
-            //   centerAlignment: Offset(-1, -1),
+            // EtchCircle(
+            //   center: Offset(100, 100),
             //   radius: 50.0,
             // ),
             EtchPath(
@@ -91,7 +100,7 @@ class _DemoPageState extends State<DemoPage> {
               ),
             ),
           ],
-          child: Container(
+          child: SizedBox(
             width: 100.0,
             height: 100.0,
           ),
