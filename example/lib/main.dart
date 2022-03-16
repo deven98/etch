@@ -1,3 +1,5 @@
+import 'dart:ui' as ui;
+
 import 'package:etch/etch.dart';
 import 'package:flutter/material.dart';
 
