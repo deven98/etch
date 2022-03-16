@@ -1,6 +1,6 @@
 name: etch
 description: A simplified, declarative way to use CustomPainter in Flutter
-version: 0.1.2
+version: 0.1.4
 repository: https://github.com/deven98/etch
 
 environment:

@@ -21,3 +21,7 @@
 
 * Corrected readme images
 
+## 0.1.4
+
+* Corrected path example 
+
