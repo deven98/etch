@@ -78,8 +78,11 @@ class _DemoPageState extends State<DemoPage> {
                     Offset(0, 0),
                     Offset(1, 0),
                     Offset(1, 1),
-                    Offset(0, 1),
                   ],
+                ),
+                EtchPathConicTo.alignment(
+                  controlPointAlignment: Offset(0.2, 0.4),
+                  endPointAlignment: Offset(0.5, -0.5),
                 ),
                 EtchPathClose(),
               ],

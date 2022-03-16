@@ -2,42 +2,29 @@ import 'package:flutter/material.dart';
 
 import 'etch_path_element.dart';
 
-class EtchPathArc extends EtchPathElement {
+class EtchPathAddOval extends EtchPathElement {
   Rect? _rect;
 
   Offset? _topLeftAlignment;
   Offset? _bottomRightAlignment;
 
-  final double _startAngle;
-  final double _sweepAngle;
-
-  EtchPathArc({
+  EtchPathAddOval({
     required Rect rect,
-    required double startAngle,
-    required double sweepAngle,
-  })  : _rect = rect,
-        _startAngle = startAngle,
-        _sweepAngle = sweepAngle;
+  }) : _rect = rect;
 
-  EtchPathArc.alignment({
+  EtchPathAddOval.alignment({
     required Offset topLeftAlignment,
     required Offset bottomRightAlignment,
-    required double startAngle,
-    required double sweepAngle,
   })  : _topLeftAlignment = topLeftAlignment,
-        _bottomRightAlignment = bottomRightAlignment,
-        _startAngle = startAngle,
-        _sweepAngle = sweepAngle;
+        _bottomRightAlignment = bottomRightAlignment;
 
   @override
   void addToPath(Path path, Canvas canvas, Size size) {
-    path.addArc(
+    path.addOval(
       Rect.fromPoints(
         _getEffectiveStart(size),
         _getEffectiveEnd(size),
       ),
-      _startAngle,
-      _sweepAngle,
     );
   }
 
@@ -71,7 +58,7 @@ class EtchPathArc extends EtchPathElement {
       return true;
     }
 
-    var e = oldElement as EtchPathArc;
+    var e = oldElement as EtchPathAddOval;
 
     return _rect != e._rect ||
         _topLeftAlignment != e._topLeftAlignment ||
