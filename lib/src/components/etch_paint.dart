@@ -1,49 +1,27 @@
-import 'dart:ui';
-
+import 'package:etch/src/components/etch_element.dart';
+import 'package:etch/src/components/etch_style.dart';
 import 'package:flutter/material.dart';
 
-class EtchPaint {
-  late Paint paint;
-
-  EtchPaint.raw(this.paint);
+class EtchPaint extends EtchElement {
+  final EtchStyle etchStyle;
 
   EtchPaint({
-    Color color = Colors.black,
-    double strokeWidth = 2.0,
-    StrokeCap strokeCap = StrokeCap.round,
-    StrokeJoin strokeJoin = StrokeJoin.miter,
-    BlendMode blendMode = BlendMode.srcOver,
-    PaintingStyle style = PaintingStyle.fill,
-    FilterQuality filterQuality = FilterQuality.none,
-    bool isAntiAlias = true,
-    MaskFilter? maskFilter,
-    Shader? shader,
-    ColorFilter? colorFilter,
-    ImageFilter? imageFilter,
-  }) : paint = Paint()
-          ..color = color
-          ..strokeWidth = strokeWidth
-          ..strokeCap = strokeCap
-          ..strokeJoin = strokeJoin
-          ..blendMode = blendMode
-          ..style = style
-          ..isAntiAlias = isAntiAlias
-          ..filterQuality = filterQuality
-          ..maskFilter = maskFilter
-          ..shader = shader
-          ..colorFilter = colorFilter
-          ..imageFilter = imageFilter;
+    EtchStyle? etchStyle,
+  }) : etchStyle = etchStyle ?? EtchStyle();
 
   @override
-  bool operator ==(Object other) {
-    if (other.runtimeType != runtimeType) {
-      return false;
-    }
-
-    var e = other as EtchPaint;
-    return paint == e.paint;
+  void paint(Canvas canvas, Size size) {
+    canvas.drawPaint(etchStyle.paint);
   }
 
   @override
-  int get hashCode => paint.hashCode;
+  bool shouldRepaint(covariant EtchElement oldElement) {
+    if (oldElement.runtimeType != runtimeType) {
+      return true;
+    }
+
+    var e = oldElement as EtchPaint;
+
+    return etchStyle != e.etchStyle;
+  }
 }

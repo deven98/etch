@@ -48,7 +48,7 @@ class _DemoPageState extends State<DemoPage> {
                 EtchPathLine(point: Offset(110, 110)),
                 EtchPathClose(),
               ],
-              etchPaint: EtchPaint(
+              etchStyle: EtchStyle(
                 style: PaintingStyle.stroke,
               ),
             ),

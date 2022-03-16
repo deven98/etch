@@ -1,7 +1,7 @@
 import 'package:etch/src/components/path/etch_path_element.dart';
 import 'package:flutter/material.dart';
 
-import '../etch_paint.dart';
+import '../etch_style.dart';
 
 class EtchPathMoveTo extends EtchPathElement {
   Offset? _point;
@@ -10,12 +10,12 @@ class EtchPathMoveTo extends EtchPathElement {
 
   EtchPathMoveTo({
     required Offset point,
-    EtchPaint? etchPaint,
+    EtchStyle? etchPaint,
   }) : _point = point;
 
   EtchPathMoveTo.alignment({
     required Offset pointAlignment,
-    EtchPaint? etchPaint,
+    EtchStyle? etchPaint,
   }) : _pointAlignment = pointAlignment;
 
   Offset _getEffectiveEnd(Size size) {

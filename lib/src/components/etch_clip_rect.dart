@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:etch/src/components/etch_element.dart';
-import 'package:etch/src/components/etch_paint.dart';
+import 'package:etch/src/components/etch_style.dart';
 import 'package:flutter/material.dart';
 
 class EtchClipRect extends EtchElement {

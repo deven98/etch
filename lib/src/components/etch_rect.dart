@@ -1,28 +1,28 @@
 import 'package:etch/src/components/etch_element.dart';
-import 'package:etch/src/components/etch_paint.dart';
+import 'package:etch/src/components/etch_style.dart';
 import 'package:flutter/material.dart';
 
 class EtchRect extends EtchElement {
   Rect? _rect;
 
-  final EtchPaint etchPaint;
+  final EtchStyle etchStyle;
 
   Offset? _topLeftAlignment;
   Offset? _bottomRightAlignment;
 
   EtchRect({
     required Rect rect,
-    EtchPaint? etchPaint,
+    EtchStyle? etchStyle,
   })  : _rect = rect,
-        etchPaint = etchPaint ?? EtchPaint();
+        etchStyle = etchStyle ?? EtchStyle();
 
   EtchRect.alignment({
     required Offset topLeftAlignment,
     required Offset bottomRightAlignment,
-    EtchPaint? etchPaint,
+    EtchStyle? etchStyle,
   })  : _topLeftAlignment = topLeftAlignment,
         _bottomRightAlignment = bottomRightAlignment,
-        etchPaint = etchPaint ?? EtchPaint();
+        etchStyle = etchStyle ?? EtchStyle();
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -31,7 +31,7 @@ class EtchRect extends EtchElement {
         _getEffectiveStart(size),
         _getEffectiveEnd(size),
       ),
-      etchPaint.paint,
+      etchStyle.paint,
     );
   }
 
@@ -68,7 +68,7 @@ class EtchRect extends EtchElement {
     var e = oldElement as EtchRect;
 
     return _rect != e._rect ||
-        etchPaint != e.etchPaint ||
+        etchStyle != e.etchStyle ||
         _topLeftAlignment != e._topLeftAlignment ||
         _bottomRightAlignment != e._bottomRightAlignment;
   }

@@ -1,5 +1,5 @@
 import 'package:etch/src/components/etch_element.dart';
-import 'package:etch/src/components/etch_paint.dart';
+import 'package:etch/src/components/etch_style.dart';
 import 'package:flutter/material.dart';
 
 class EtchCircle extends EtchElement {
@@ -8,23 +8,23 @@ class EtchCircle extends EtchElement {
 
   final double _radius;
 
-  final EtchPaint etchPaint;
+  final EtchStyle etchStyle;
 
   EtchCircle({
     required Offset center,
     required double radius,
-    EtchPaint? etchPaint,
+    EtchStyle? etchStyle,
   })  : _center = center,
         _radius = radius,
-        etchPaint = etchPaint ?? EtchPaint();
+        etchStyle = etchStyle ?? EtchStyle();
 
   EtchCircle.alignment({
     required Offset centerAlignment,
     required double radius,
-    EtchPaint? etchPaint,
+    EtchStyle? etchStyle,
   })  : _centerAlignment = centerAlignment,
         _radius = radius,
-        etchPaint = etchPaint ?? EtchPaint();
+        etchStyle = etchStyle ?? EtchStyle();
 
   Offset _getEffectiveStart(Size size) {
     if (_center != null) {
@@ -43,7 +43,7 @@ class EtchCircle extends EtchElement {
     canvas.drawCircle(
       _getEffectiveStart(size),
       _radius,
-      etchPaint.paint,
+      etchStyle.paint,
     );
   }
 
@@ -58,6 +58,6 @@ class EtchCircle extends EtchElement {
     return _center != e._center ||
         _radius != e._radius ||
         _centerAlignment != e._centerAlignment ||
-        etchPaint != e.etchPaint;
+        etchStyle != e.etchStyle;
   }
 }

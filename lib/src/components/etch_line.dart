@@ -1,12 +1,12 @@
 import 'package:etch/src/components/etch_element.dart';
-import 'package:etch/src/components/etch_paint.dart';
+import 'package:etch/src/components/etch_style.dart';
 import 'package:flutter/material.dart';
 
 class EtchLine extends EtchElement {
   Offset? _start;
   Offset? _end;
 
-  final EtchPaint etchPaint;
+  final EtchStyle etchStyle;
 
   Offset? _startAlignment;
   Offset? _endAlignment;
@@ -14,18 +14,18 @@ class EtchLine extends EtchElement {
   EtchLine({
     required Offset start,
     required Offset end,
-    EtchPaint? etchPaint,
+    EtchStyle? etchStyle,
   })  : _start = start,
         _end = end,
-        etchPaint = etchPaint ?? EtchPaint();
+        etchStyle = etchStyle ?? EtchStyle();
 
   EtchLine.alignment({
     required Offset startAlignment,
     required Offset endAlignment,
-    EtchPaint? etchPaint,
+    EtchStyle? etchStyle,
   })  : _startAlignment = startAlignment,
         _endAlignment = endAlignment,
-        etchPaint = etchPaint ?? EtchPaint();
+        etchStyle = etchStyle ?? EtchStyle();
 
   Offset _getEffectiveStart(Size size) {
     if (_start != null) {
@@ -54,7 +54,7 @@ class EtchLine extends EtchElement {
   @override
   void paint(Canvas canvas, Size size) {
     canvas.drawLine(
-        _getEffectiveStart(size), _getEffectiveEnd(size), etchPaint.paint);
+        _getEffectiveStart(size), _getEffectiveEnd(size), etchStyle.paint);
   }
 
   @override
@@ -68,7 +68,7 @@ class EtchLine extends EtchElement {
     return _start != e._start ||
         _end != e._end ||
         _startAlignment != e._startAlignment ||
-        etchPaint != e.etchPaint ||
+        etchStyle != e.etchStyle ||
         _endAlignment != e._endAlignment;
   }
 }

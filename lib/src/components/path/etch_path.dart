@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 
 class EtchPath extends EtchElement {
   final List<EtchPathElement> etchPathElements;
-  final EtchPaint _etchPaint;
+  final EtchStyle _etchStyle;
 
   EtchPath({
     required this.etchPathElements,
-    EtchPaint? etchPaint,
-  }) : _etchPaint = etchPaint ?? EtchPaint();
+    EtchStyle? etchStyle,
+  }) : _etchStyle = etchStyle ?? EtchStyle();
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -19,7 +19,7 @@ class EtchPath extends EtchElement {
       e.addToPath(path, canvas, size);
     }
 
-    canvas.drawPath(path, _etchPaint.paint);
+    canvas.drawPath(path, _etchStyle.paint);
   }
 
   @override
