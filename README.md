@@ -19,7 +19,7 @@ and the Flutter guide for
 
 * Create your CustomPaint widget declaratively.
 
-<img align="right" width="200" height="200" src="https://github.com/deven98/etch/blob/master/images/basic_example.png">
+<img align="right" width="200" height="200" src="https://user-images.githubusercontent.com/26357843/158589394-6681b2d7-6009-407f-b3e8-39ea1fa1ba42.png">
 
 ```dart
     EtchCanvas(
@@ -38,7 +38,7 @@ and the Flutter guide for
 
 * Use either points or alignments to define points everywhere
 
-<img align="right" width="200" height="200" src="https://github.com/deven98/etch/blob/master/images/alignment_example.png">
+<img align="right" width="200" height="200" src="https://user-images.githubusercontent.com/26357843/158589497-94b96c29-221f-4933-8232-4e134e82c1f4.png">
 
 ```dart
     EtchCanvas(
@@ -64,7 +64,7 @@ and the Flutter guide for
 
 * Easy support for Paths
 
-<img align="right" width="200" height="200" src="https://github.com/deven98/etch/blob/master/images/paths_example.png">
+<img align="right" width="200" height="200" src="https://user-images.githubusercontent.com/26357843/158589568-905bd314-2c60-4403-8b44-545521efa163.png">
 
 ```dart
     EtchCanvas(
@@ -92,7 +92,7 @@ and the Flutter guide for
 
 * Work with canvas layers easily
 
-<img align="right" width="200" height="200" src="https://github.com/deven98/etch/blob/master/images/layer_rotate_example.png">
+<img align="right" width="200" height="200" src="https://user-images.githubusercontent.com/26357843/158589616-bf903587-dd41-407d-aa4d-eef452b8e510.png">
 
 ```dart
     EtchCanvas(
@@ -119,7 +119,7 @@ and the Flutter guide for
 Add animations easily using `TweenAnimationBuilder` or using normal animation controllers without
 having to pass down progress or other logic.
 
-<img align="right" width="200" height="200" src="https://github.com/deven98/etch/blob/master/images/animation_demo.gif">
+<img align="right" width="200" height="200" src="https://user-images.githubusercontent.com/26357843/158589665-ea8f7c39-a736-4bc7-9399-c267d48b8394.gif">
 
 ```dart
     TweenAnimationBuilder<double>(
