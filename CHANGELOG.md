@@ -17,3 +17,7 @@
 * Added better README
 * Added documentation
 
+## 0.1.2
+
+* Corrected readme images
+
