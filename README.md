@@ -27,6 +27,10 @@ and the Flutter guide for
                 radius: 50.0,
             ),
         ],
+        child: SizedBox(
+          width: 100.0,
+          height: 100.0,
+        ),
     ),
 ```
 
@@ -42,8 +46,15 @@ and the Flutter guide for
             EtchCircle.alignment(
                centerAlignment: Offset.zero,
                radius: 50.0,
+               etchStyle: EtchStyle(
+                   color: Colors.red,
+               ),
            ),
         ],
+        child: SizedBox(
+          width: 100.0,
+          height: 100.0,
+        ),
     ),
 ```
 
@@ -51,25 +62,25 @@ and the Flutter guide for
 
 ```dart
     EtchCanvas(
-        etchElements: [
-            EtchPath(
-                etchPathElements: [
-                    EtchPathMoveTo(point: Offset(0, 0)),
-                    EtchPathAddPolygon.alignment(
-                      pointAlignments: [
-                        Offset(0, 0),
-                        Offset(1, 0),
-                        Offset(1, 1),
-                      ],
-                    ),
-                    EtchPathConicTo.alignment(
-                      controlPointAlignment: Offset(0.2, 0.4),
-                      endPointAlignment: Offset(0.5, -0.5),
-                    ),
-                    EtchPathClose(),
-                ],
-            ),
-        ],
+      etchPathElements: [
+        EtchPathMoveTo(point: Offset(0, 0)),
+        EtchPathAddPolygon.alignment(
+          pointAlignments: [
+            Offset(-1, -1),
+            Offset(1, -1),
+            Offset(1, 1),
+          ],
+        ),
+        EtchPathQuadraticBezierTo.alignment(
+          controlPointAlignment: Offset(1, 0.75),
+          endPointAlignment: Offset(-1, 1),
+        ),
+        EtchPathClose(),
+      ],
+      child: SizedBox(
+        width: 100.0,
+        height: 100.0,
+      ),
     ),
 ```
 
@@ -77,21 +88,21 @@ and the Flutter guide for
 
 ```dart
     EtchCanvas(
-        etchElements: [
-            EtchLayer.rotate(
-              rotateX: 1.2,
-              etchElements: [
-                EtchRect.alignment(
-                  topLeftAlignment: Offset(-1, -1),
-                  bottomRightAlignment: Offset(1, 1),
-                ),
-              ],
+      etchElements: [
+        EtchLayer.rotate(
+          rotateZ: 1.2,
+          etchElements: [
+            EtchRect.alignment(
+              topLeftAlignment: Offset(-1, -1),
+              bottomRightAlignment: Offset(1, 1),
             ),
-            EtchCircle.alignment(
-               centerAlignment: Offset.zero,
-               radius: 50.0,
-           ),
-        ],
+          ],
+        ),
+      ],
+      child: SizedBox(
+        width: 100.0,
+        height: 100.0,
+      ),
     ),
 ```
 
