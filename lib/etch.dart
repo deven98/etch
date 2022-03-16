@@ -13,6 +13,7 @@ export 'src/components/etch_circle.dart';
 export 'src/components/etch_paint.dart';
 export 'src/components/etch_paragraph.dart';
 export 'src/components/etch_image.dart';
+export 'src/components/etch_vertices.dart';
 export 'src/components/path/etch_path_move_to.dart';
 export 'src/components/path/etch_path.dart';
 export 'src/components/path/etch_path_element.dart';
