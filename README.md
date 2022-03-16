@@ -19,6 +19,8 @@ and the Flutter guide for
 
 * Create your CustomPaint widget declaratively.
 
+<img align="right" width="386" height="322" src="https://github.com/deven98/etch/blob/master/images/basic_example.png">
+
 ```dart
     EtchCanvas(
         etchElements: [
@@ -33,8 +35,6 @@ and the Flutter guide for
         ),
     ),
 ```
-
-<img align="right" width="150" height="100" src="https://github.com/deven98/etch/blob/master/images/basic_example.png">
 
 * Use either points or alignments to define points everywhere
 
