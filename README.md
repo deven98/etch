@@ -38,6 +38,8 @@ and the Flutter guide for
 
 * Use either points or alignments to define points everywhere
 
+<img align="right" width="389" height="273" src="https://github.com/deven98/etch/blob/master/images/alignment_example.png">
+
 ```dart
     EtchCanvas(
         etchElements: [
@@ -60,9 +62,9 @@ and the Flutter guide for
     ),
 ```
 
-![](https://github.com/deven98/etch/blob/master/images/alignment_example.png)
-
 * Easy support for Paths
+
+<img align="right" width="395" height="260" src="https://github.com/deven98/etch/blob/master/images/paths_example.png">
 
 ```dart
     EtchCanvas(
@@ -88,9 +90,9 @@ and the Flutter guide for
     ),
 ```
 
-![](https://github.com/deven98/etch/blob/master/images/paths_example.png)
-
 * Work with canvas layers easily
+
+<img align="right" width="394" height="261" src="https://github.com/deven98/etch/blob/master/images/layer_rotate_example.png">
 
 ```dart
     EtchCanvas(
@@ -112,12 +114,12 @@ and the Flutter guide for
     ),
 ```
 
-![](https://github.com/deven98/etch/blob/master/images/layer_rotate_example.png)
-
 * Easy animations with `TweenAnimationBuilder`
 
 Add animations easily using `TweenAnimationBuilder` or using normal animation controllers without
-having to pass down progress or having
+having to pass down progress or other logic.
+
+<img align="right" width="300" height="238" src="https://github.com/deven98/etch/blob/master/images/animation_demo.gif">
 
 ```dart
     TweenAnimationBuilder<double>(
@@ -144,8 +146,6 @@ having to pass down progress or having
       }
     ),
 ```
-
-![](https://github.com/deven98/etch/blob/master/images/animation_demo.gif)
 
 ## Getting started
 
