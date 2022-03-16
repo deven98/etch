@@ -34,6 +34,8 @@ and the Flutter guide for
     ),
 ```
 
+![](https://github.com/deven98/etch/blob/master/images/basic_example.png)
+
 * Use either points or alignments to define points everywhere
 
 ```dart
@@ -57,6 +59,8 @@ and the Flutter guide for
         ),
     ),
 ```
+
+![](https://github.com/deven98/etch/blob/master/images/alignment_example.png)
 
 * Easy support for Paths
 
@@ -84,6 +88,8 @@ and the Flutter guide for
     ),
 ```
 
+![](https://github.com/deven98/etch/blob/master/images/paths_example.png)
+
 * Work with canvas layers easily
 
 ```dart
@@ -105,6 +111,8 @@ and the Flutter guide for
       ),
     ),
 ```
+
+![](https://github.com/deven98/etch/blob/master/images/layer_rotate_example.png)
 
 * Easy animations with `TweenAnimationBuilder`
 
@@ -136,6 +144,8 @@ having to pass down progress or having
       }
     ),
 ```
+
+![](https://github.com/deven98/etch/blob/master/images/animation_demo.gif)
 
 ## Getting started
 
