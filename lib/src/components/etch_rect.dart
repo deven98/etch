@@ -3,11 +3,16 @@ import 'package:etch/src/components/etch_style.dart';
 import 'package:flutter/material.dart';
 
 class EtchRect extends EtchElement {
+  /// Rect to paint on the screen
   Rect? _rect;
 
+  /// [EtchStyle] to use for painting the element
   final EtchStyle etchStyle;
 
+  /// Rect top left in alignment terms
   Offset? _topLeftAlignment;
+
+  /// Rect bottom right in alignment terms
   Offset? _bottomRightAlignment;
 
   EtchRect({

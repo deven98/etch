@@ -1,26 +1,33 @@
 import 'package:etch/etch.dart';
 import 'package:flutter/material.dart';
 
+/// Creates a separate canvas layer which can have its own transformation
 class EtchLayer extends EtchElement {
+  /// Elements to paint inside the canvas layer
   final List<EtchElement> etchElements;
 
+  /// Transform which is applied to this layer
   final Matrix4 _transform;
 
+  /// Default constructor which can be supplied with a [Matrix4] transformation for the canvas layer
   EtchLayer({
     required this.etchElements,
     Matrix4? transform,
   }) : _transform = transform ?? Matrix4.identity();
 
+  /// Creates a canvas layer with this translation
   EtchLayer.translate({
     required this.etchElements,
     Offset translate = const Offset(0, 0),
   }) : _transform = Matrix4.identity()..translate(translate.dx, translate.dy);
 
+  /// Creates a canvas layer with this scale
   EtchLayer.scale({
     required this.etchElements,
     Offset scale = const Offset(0, 0),
   }) : _transform = Matrix4.identity()..scale(scale.dx, scale.dy);
 
+  /// Creates a canvas layer with this rotation
   EtchLayer.rotate({
     required this.etchElements,
     double rotateX = 0.0,

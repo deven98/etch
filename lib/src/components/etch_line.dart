@@ -3,12 +3,19 @@ import 'package:etch/src/components/etch_style.dart';
 import 'package:flutter/material.dart';
 
 class EtchLine extends EtchElement {
+  /// Start of the line in pixel terms
   Offset? _start;
+
+  /// End of the line in pixel terms
   Offset? _end;
 
+  /// [EtchStyle] to use for painting the element
   final EtchStyle etchStyle;
 
+  /// Start of the line in alignment terms
   Offset? _startAlignment;
+
+  /// End of the line in alignment terms
   Offset? _endAlignment;
 
   EtchLine({

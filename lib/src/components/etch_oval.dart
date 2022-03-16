@@ -3,11 +3,15 @@ import 'package:etch/src/components/etch_style.dart';
 import 'package:flutter/material.dart';
 
 class EtchOval extends EtchElement {
+  /// Rect to draw oval in
   Rect? _rect;
 
   final EtchStyle etchStyle;
 
+  /// Rect top left in alignment terms
   Offset? _topLeftAlignment;
+
+  /// Rect bottom right in alignment terms
   Offset? _bottomRightAlignment;
 
   EtchOval({

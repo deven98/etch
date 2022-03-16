@@ -6,6 +6,7 @@ import 'dart:ui' as ui;
 class EtchImage extends EtchElement {
   Offset? _offset;
 
+  /// [EtchStyle] to use for painting the element
   final EtchStyle etchStyle;
 
   Offset? _offsetAlignment;

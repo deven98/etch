@@ -12,3 +12,8 @@
 * Added better example
 * BREAKING: Changed `EtchPaint` to `EtchStyle` -> `EtchPaint` is now used to draw paint on the canvas
 
+## 0.1.1
+
+* Added better README
+* Added documentation
+

@@ -3,9 +3,13 @@ import 'dart:ui';
 import 'package:etch/src/components/etch_element.dart';
 
 class EtchClipRect extends EtchElement {
+  /// Rect for clipping
   Rect? _rect;
 
+  /// Rect top left in alignment terms
   Offset? _topLeftAlignment;
+
+  /// Rect bottom right in alignment terms
   Offset? _bottomRightAlignment;
 
   final ClipOp _clipOp;

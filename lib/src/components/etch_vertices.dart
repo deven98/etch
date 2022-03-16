@@ -7,6 +7,7 @@ class EtchVertices extends EtchElement {
   final Vertices _vertices;
   final BlendMode _blendMode;
 
+  /// [EtchStyle] to use for painting the element
   final EtchStyle etchStyle;
 
   EtchVertices({

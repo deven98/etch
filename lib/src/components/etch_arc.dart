@@ -2,9 +2,11 @@ import 'package:etch/src/components/etch_element.dart';
 import 'package:etch/src/components/etch_style.dart';
 import 'package:flutter/material.dart';
 
+/// Draws an arc on the canvas
 class EtchArc extends EtchElement {
   Rect? _rect;
 
+  /// [EtchStyle] to use for painting the element
   final EtchStyle etchStyle;
 
   Offset? _topLeftAlignment;

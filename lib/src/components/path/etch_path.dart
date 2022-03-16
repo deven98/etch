@@ -1,8 +1,12 @@
 import 'package:etch/etch.dart';
 import 'package:flutter/material.dart';
 
+/// Draws a path using [EtchPathElement]s
 class EtchPath extends EtchElement {
+  /// A list of path elements to draw on the screen
   final List<EtchPathElement> etchPathElements;
+
+  /// [EtchStyle] to use for painting the path elements
   final EtchStyle _etchStyle;
 
   EtchPath({

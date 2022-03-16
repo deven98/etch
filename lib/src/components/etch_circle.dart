@@ -2,12 +2,18 @@ import 'package:etch/src/components/etch_element.dart';
 import 'package:etch/src/components/etch_style.dart';
 import 'package:flutter/material.dart';
 
+/// Draws a circle on the canvas
 class EtchCircle extends EtchElement {
+  /// Center for the circle in pixel terms
   Offset? _center;
+
+  /// Center for the circle in alignment terms
   Offset? _centerAlignment;
 
+  /// Radius of the circle
   final double _radius;
 
+  /// [EtchStyle] to use for painting the element
   final EtchStyle etchStyle;
 
   EtchCircle({

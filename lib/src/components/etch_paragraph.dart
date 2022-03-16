@@ -4,10 +4,13 @@ import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 
 class EtchParagraph extends EtchElement {
+  /// Offset for painting the text in pixel terms
   Offset? _offset;
 
+  /// Offset for painting the text in alignment terms
   Offset? _offsetAlignment;
 
+  /// Paragraph for rendering
   final ui.Paragraph _paragraph;
 
   EtchParagraph({

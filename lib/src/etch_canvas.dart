@@ -1,8 +1,12 @@
 import 'package:etch/src/components/etch_element.dart';
 import 'package:flutter/material.dart';
 
+/// Main canvas for etch
 class EtchCanvas extends StatelessWidget {
+  /// [etchElements] to be painted onto the canvas
   final List<EtchElement> etchElements;
+
+  /// [child] corresponding to the usual [CustomPaint] child property
   final Widget? child;
 
   const EtchCanvas({
@@ -20,6 +24,7 @@ class EtchCanvas extends StatelessWidget {
   }
 }
 
+/// [CustomPainter] to paint [EtchElement]s given to the canvas
 class EtchPainter extends CustomPainter {
   final List<EtchElement> elements;
 
