@@ -20,4 +20,4 @@ export 'src/components/path/etch_path_line.dart';
 export 'src/components/path/etch_path_close.dart';
 export 'src/components/path/etch_path_arc.dart';
 export 'src/components/path/etch_path_rect.dart';
-
+export 'src/components/path/etch_path_add_polygon.dart';

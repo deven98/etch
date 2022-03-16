@@ -1,43 +1,50 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
 
-import 'package:etch/src/components/etch_element.dart';
+import 'etch_path_element.dart';
 
-class EtchClipRect extends EtchElement {
+class EtchPathArcTo extends EtchPathElement {
   Rect? _rect;
 
   Offset? _topLeftAlignment;
   Offset? _bottomRightAlignment;
 
-  final ClipOp _clipOp;
-  final bool _doAntiAlias;
+  final double _startAngle;
+  final double _sweepAngle;
 
-  EtchClipRect({
+  final bool _forceMoveTo;
+
+  EtchPathArcTo({
     required Rect rect,
-    ClipOp clipOp = ClipOp.intersect,
-    bool doAntiAlias = true,
+    required double startAngle,
+    required double sweepAngle,
+    required bool forceMoveTo,
   })  : _rect = rect,
-        _clipOp = clipOp,
-        _doAntiAlias = true;
+        _startAngle = startAngle,
+        _sweepAngle = sweepAngle,
+        _forceMoveTo = forceMoveTo;
 
-  EtchClipRect.alignment({
+  EtchPathArcTo.alignment({
     required Offset topLeftAlignment,
     required Offset bottomRightAlignment,
-    ClipOp clipOp = ClipOp.intersect,
-    bool doAntiAlias = true,
+    required double startAngle,
+    required double sweepAngle,
+    required bool forceMoveTo,
   })  : _topLeftAlignment = topLeftAlignment,
         _bottomRightAlignment = bottomRightAlignment,
-        _clipOp = clipOp,
-        _doAntiAlias = true;
+        _startAngle = startAngle,
+        _sweepAngle = sweepAngle,
+        _forceMoveTo = forceMoveTo;
 
   @override
-  void paint(Canvas canvas, Size size) {
-    canvas.clipRect(
+  void addToPath(Path path, Canvas canvas, Size size) {
+    path.arcTo(
       Rect.fromPoints(
         _getEffectiveStart(size),
         _getEffectiveEnd(size),
       ),
-      clipOp: _clipOp,
-      doAntiAlias: _doAntiAlias,
+      _startAngle,
+      _sweepAngle,
+      _forceMoveTo,
     );
   }
 
@@ -66,12 +73,12 @@ class EtchClipRect extends EtchElement {
   }
 
   @override
-  bool shouldRepaint(covariant EtchElement oldElement) {
+  bool shouldRepaint(covariant EtchPathElement oldElement) {
     if (oldElement.runtimeType != runtimeType) {
       return true;
     }
 
-    var e = oldElement as EtchClipRect;
+    var e = oldElement as EtchPathArcTo;
 
     return _rect != e._rect ||
         _topLeftAlignment != e._topLeftAlignment ||

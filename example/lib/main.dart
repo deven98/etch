@@ -1,5 +1,3 @@
-import 'dart:ui' as ui;
-
 import 'package:etch/etch.dart';
 import 'package:flutter/material.dart';
 
@@ -68,9 +66,26 @@ class _DemoPageState extends State<DemoPage> {
             //   startAngle: 0,
             //   sweepAngle: 2,
             // ),
-            EtchCircle.alignment(
-              centerAlignment: Offset(-1, -1),
-              radius: 50.0,
+            // EtchCircle.alignment(
+            //   centerAlignment: Offset(-1, -1),
+            //   radius: 50.0,
+            // ),
+            EtchPath(
+              etchPathElements: [
+                EtchPathMoveTo(point: Offset(0, 0)),
+                EtchPathAddPolygon.alignment(
+                  pointAlignments: [
+                    Offset(0, 0),
+                    Offset(1, 0),
+                    Offset(1, 1),
+                    Offset(0, 1),
+                  ],
+                ),
+                EtchPathClose(),
+              ],
+              etchStyle: EtchStyle(
+                style: PaintingStyle.stroke,
+              ),
             ),
           ],
           child: Container(

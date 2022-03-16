@@ -1,16 +1,16 @@
 import 'package:etch/src/components/path/etch_path_element.dart';
 import 'package:flutter/material.dart';
 
-class EtchPathLine extends EtchPathElement {
+class EtchPathRelativeMoveTo extends EtchPathElement {
   Offset? _point;
 
   Offset? _pointAlignment;
 
-  EtchPathLine({
+  EtchPathRelativeMoveTo({
     required Offset point,
   }) : _point = point;
 
-  EtchPathLine.alignment({
+  EtchPathRelativeMoveTo.alignment({
     required Offset pointAlignment,
   }) : _pointAlignment = pointAlignment;
 
@@ -29,7 +29,7 @@ class EtchPathLine extends EtchPathElement {
   @override
   void addToPath(Path path, Canvas canvas, Size size) {
     var p = _getEffectiveEnd(size);
-    path.lineTo(p.dx, p.dy);
+    path.relativeMoveTo(p.dx, p.dy);
   }
 
   @override
@@ -38,7 +38,7 @@ class EtchPathLine extends EtchPathElement {
       return true;
     }
 
-    var e = oldElement as EtchPathLine;
+    var e = oldElement as EtchPathRelativeMoveTo;
 
     return _point != e._point || _pointAlignment != e._pointAlignment;
   }
