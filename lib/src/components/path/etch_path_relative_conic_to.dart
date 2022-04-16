@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'etch_path_element.dart';
 
-/// Adds a conic bezier curve to the given end point using the control point
-class EtchPathConicTo extends EtchPathElement {
+/// Add a conic bezier curve from the current point to the offset given
+/// Relative paths are drawn with respect to the current point, not the origin
+/// The alignment constructor effectively uses the current point as origin and
+/// calculates alignment using the bounding size
+class EtchPathRelativeConicTo extends EtchPathElement {
   Offset? _controlPoint;
   Offset? _endPoint;
 
@@ -12,7 +15,7 @@ class EtchPathConicTo extends EtchPathElement {
 
   final double _weight;
 
-  EtchPathConicTo({
+  EtchPathRelativeConicTo({
     required Offset controlPoint,
     required Offset endPoint,
     double weight = 1,
@@ -20,7 +23,7 @@ class EtchPathConicTo extends EtchPathElement {
         _endPoint = endPoint,
         _weight = weight;
 
-  EtchPathConicTo.alignment({
+  EtchPathRelativeConicTo.alignment({
     required Offset controlPointAlignment,
     required Offset endPointAlignment,
     double weight = 1,
@@ -56,7 +59,7 @@ class EtchPathConicTo extends EtchPathElement {
   void addToPath(Path path, Canvas canvas, Size size) {
     var effectiveControlPoint = _getEffectiveStart(size);
     var effectiveEndpoint = _getEffectiveEnd(size);
-    path.conicTo(
+    path.relativeConicTo(
       effectiveControlPoint.dx,
       effectiveControlPoint.dy,
       effectiveEndpoint.dx,
@@ -71,7 +74,7 @@ class EtchPathConicTo extends EtchPathElement {
       return true;
     }
 
-    var e = oldElement as EtchPathConicTo;
+    var e = oldElement as EtchPathRelativeConicTo;
 
     return _endPoint != e._endPoint ||
         _controlPoint != e._controlPoint ||

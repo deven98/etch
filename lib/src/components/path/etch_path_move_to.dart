@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../etch_style.dart';
 
+/// Move the current point of the path elsewhere
 class EtchPathMoveTo extends EtchPathElement {
   Offset? _point;
 

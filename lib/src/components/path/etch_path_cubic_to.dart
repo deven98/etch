@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'etch_path_element.dart';
 
+/// Adds a cubic bezier curve from the current point to the end point using the two control points
 class EtchPathCubicTo extends EtchPathElement {
   Offset? _controlPoint;
   Offset? _controlPoint2;

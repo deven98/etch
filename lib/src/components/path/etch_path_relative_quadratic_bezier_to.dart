@@ -2,31 +2,28 @@ import 'package:flutter/material.dart';
 
 import 'etch_path_element.dart';
 
-/// Adds a conic bezier curve to the given end point using the control point
-class EtchPathConicTo extends EtchPathElement {
+/// Draw a quadratic bezier the end point using the control point
+/// Relative paths are drawn with respect to the current point, not the origin
+/// The alignment constructor effectively uses the current point as origin and
+/// calculates alignment using the bounding size
+class EtchPathRelativeQuadraticBezierTo extends EtchPathElement {
   Offset? _controlPoint;
   Offset? _endPoint;
 
   Offset? _controlPointAlignment;
   Offset? _endPointAlignment;
 
-  final double _weight;
-
-  EtchPathConicTo({
+  EtchPathRelativeQuadraticBezierTo({
     required Offset controlPoint,
     required Offset endPoint,
-    double weight = 1,
   })  : _controlPoint = controlPoint,
-        _endPoint = endPoint,
-        _weight = weight;
+        _endPoint = endPoint;
 
-  EtchPathConicTo.alignment({
+  EtchPathRelativeQuadraticBezierTo.alignment({
     required Offset controlPointAlignment,
     required Offset endPointAlignment,
-    double weight = 1,
   })  : _controlPointAlignment = controlPointAlignment,
-        _endPointAlignment = endPointAlignment,
-        _weight = weight;
+        _endPointAlignment = endPointAlignment;
 
   Offset _getEffectiveStart(Size size) {
     if (_controlPoint != null) {
@@ -56,12 +53,11 @@ class EtchPathConicTo extends EtchPathElement {
   void addToPath(Path path, Canvas canvas, Size size) {
     var effectiveControlPoint = _getEffectiveStart(size);
     var effectiveEndpoint = _getEffectiveEnd(size);
-    path.conicTo(
+    path.relativeQuadraticBezierTo(
       effectiveControlPoint.dx,
       effectiveControlPoint.dy,
       effectiveEndpoint.dx,
       effectiveEndpoint.dy,
-      _weight,
     );
   }
 
@@ -71,11 +67,10 @@ class EtchPathConicTo extends EtchPathElement {
       return true;
     }
 
-    var e = oldElement as EtchPathConicTo;
+    var e = oldElement as EtchPathRelativeQuadraticBezierTo;
 
     return _endPoint != e._endPoint ||
         _controlPoint != e._controlPoint ||
-        _weight != e._weight ||
         _controlPointAlignment != e._controlPointAlignment ||
         _endPointAlignment != e._endPointAlignment;
   }

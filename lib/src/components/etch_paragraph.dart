@@ -3,6 +3,7 @@ import 'package:etch/src/components/etch_style.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 
+/// Draws text on the screen
 class EtchParagraph extends EtchElement {
   /// Offset for painting the text in pixel terms
   Offset? _offset;

@@ -2,6 +2,7 @@ import 'package:etch/src/components/etch_element.dart';
 import 'package:etch/src/components/etch_style.dart';
 import 'package:flutter/material.dart';
 
+/// Paints the canvas with the given paint
 class EtchPaint extends EtchElement {
   /// [EtchStyle] to use for painting the element
   final EtchStyle etchStyle;

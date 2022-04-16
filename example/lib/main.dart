@@ -35,10 +35,12 @@ class _DemoPageState extends State<DemoPage> {
         child: EtchCanvas(
           etchElements: [
             EtchLayer.scale(
-              scale: Offset(1, 2),
+              scale: const Offset(1, 2),
               etchElements: [
-                EtchLine(start: Offset(0, 0), end: Offset(100, 100)),
-                EtchLine(start: Offset(0, 50), end: Offset(100, 100)),
+                EtchLine(
+                    start: const Offset(0, 0), end: const Offset(100, 100)),
+                EtchLine(
+                    start: const Offset(0, 50), end: const Offset(100, 100)),
               ],
             ),
             // EtchLayer(
@@ -81,17 +83,17 @@ class _DemoPageState extends State<DemoPage> {
             // ),
             EtchPath(
               etchPathElements: [
-                EtchPathMoveTo(point: Offset(0, 0)),
+                EtchPathMoveTo(point: const Offset(0, 0)),
                 EtchPathAddPolygon.alignment(
                   pointAlignments: [
-                    Offset(0, 0),
-                    Offset(1, 0),
-                    Offset(1, 1),
+                    const Offset(0, 0),
+                    const Offset(1, 0),
+                    const Offset(1, 1),
                   ],
                 ),
                 EtchPathConicTo.alignment(
-                  controlPointAlignment: Offset(0.2, 0.4),
-                  endPointAlignment: Offset(0.5, -0.5),
+                  controlPointAlignment: const Offset(0.2, 0.4),
+                  endPointAlignment: const Offset(0.5, -0.5),
                 ),
                 EtchPathClose(),
               ],
@@ -100,7 +102,7 @@ class _DemoPageState extends State<DemoPage> {
               ),
             ),
           ],
-          child: SizedBox(
+          child: const SizedBox(
             width: 100.0,
             height: 100.0,
           ),

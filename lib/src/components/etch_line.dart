@@ -2,6 +2,7 @@ import 'package:etch/src/components/etch_element.dart';
 import 'package:etch/src/components/etch_style.dart';
 import 'package:flutter/material.dart';
 
+/// Draws a line on the canvas
 class EtchLine extends EtchElement {
   /// Start of the line in pixel terms
   Offset? _start;

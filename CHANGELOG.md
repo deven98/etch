@@ -25,3 +25,7 @@
 
 * Corrected path example 
 
+## 0.2.1
+
+* Added relative path objects and rounded rect 
+

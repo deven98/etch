@@ -2,16 +2,20 @@ import 'package:flutter/material.dart';
 
 import 'etch_path_element.dart';
 
+/// Adds an oval to the current path
 class EtchPathAddOval extends EtchPathElement {
   Rect? _rect;
 
   Offset? _topLeftAlignment;
   Offset? _bottomRightAlignment;
 
+  /// Constructor for creating the oval which uses the Rect given by the user
   EtchPathAddOval({
     required Rect rect,
   }) : _rect = rect;
 
+  /// Constructor for creating the oval which uses alignments to create the Rect
+  /// Alignments here are with respect to the center (Center is (0,0))
   EtchPathAddOval.alignment({
     required Offset topLeftAlignment,
     required Offset bottomRightAlignment,

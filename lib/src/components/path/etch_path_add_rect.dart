@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'etch_path_element.dart';
 
+/// Adds a rectangle to the current path
 class EtchPathAddRect extends EtchPathElement {
   Rect? _rect;
 

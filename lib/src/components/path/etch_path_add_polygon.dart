@@ -1,6 +1,7 @@
 import 'package:etch/src/components/path/etch_path_element.dart';
 import 'package:flutter/material.dart';
 
+/// Adds a polygon to the current path
 class EtchPathAddPolygon extends EtchPathElement {
   List<Offset>? _points;
 

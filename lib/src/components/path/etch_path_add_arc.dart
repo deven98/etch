@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'etch_path_element.dart';
 
+/// Adds an arc to the current path
 class EtchPathAddArc extends EtchPathElement {
   Rect? _rect;
 
@@ -11,6 +12,7 @@ class EtchPathAddArc extends EtchPathElement {
   final double _startAngle;
   final double _sweepAngle;
 
+  /// Constructor for creating the arc which uses the Rect given by the user
   EtchPathAddArc({
     required Rect rect,
     required double startAngle,
@@ -19,6 +21,8 @@ class EtchPathAddArc extends EtchPathElement {
         _startAngle = startAngle,
         _sweepAngle = sweepAngle;
 
+  /// Constructor for creating the arc which uses alignments to create the Rect
+  /// Alignments here are with respect to the center (Center is (0,0))
   EtchPathAddArc.alignment({
     required Offset topLeftAlignment,
     required Offset bottomRightAlignment,

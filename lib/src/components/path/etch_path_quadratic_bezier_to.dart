@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'etch_path_element.dart';
 
+/// Draw a quadratic bezier the end point using the control point
 class EtchPathQuadraticBezierTo extends EtchPathElement {
   Offset? _controlPoint;
   Offset? _endPoint;

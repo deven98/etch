@@ -2,6 +2,7 @@ import 'package:etch/src/components/etch_element.dart';
 import 'package:etch/src/components/etch_style.dart';
 import 'package:flutter/material.dart';
 
+/// Draws an oval on the canvas
 class EtchOval extends EtchElement {
   /// Rect to draw oval in
   Rect? _rect;

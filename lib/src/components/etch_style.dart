@@ -36,12 +36,11 @@ class EtchStyle {
 
   @override
   bool operator ==(Object other) {
-    if (other.runtimeType != runtimeType) {
-      return false;
+    if (identical(this, other)) {
+      return true;
     }
 
-    var e = other as EtchStyle;
-    return paint == e.paint;
+    return other is EtchStyle && paint == other.paint;
   }
 
   @override

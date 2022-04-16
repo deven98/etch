@@ -1,6 +1,10 @@
 import 'package:etch/src/components/path/etch_path_element.dart';
 import 'package:flutter/material.dart';
 
+/// Move the current point of the path elsewhere
+/// Relative paths are drawn with respect to the current point, not the origin
+/// The alignment constructor effectively uses the current point as origin and
+/// calculates alignment using the bounding size
 class EtchPathRelativeMoveTo extends EtchPathElement {
   Offset? _point;
 

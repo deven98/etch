@@ -3,6 +3,7 @@ import 'package:etch/src/components/etch_style.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 
+/// Draws an image on the canvas
 class EtchImage extends EtchElement {
   Offset? _offset;
 

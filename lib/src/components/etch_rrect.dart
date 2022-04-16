@@ -2,10 +2,9 @@ import 'package:etch/src/components/etch_element.dart';
 import 'package:etch/src/components/etch_style.dart';
 import 'package:flutter/material.dart';
 
-/// Draw a rectangle on the canvas
-class EtchRect extends EtchElement {
+class EtchRRect extends EtchElement {
   /// Rect to paint on the screen
-  Rect? _rect;
+  RRect? _rect;
 
   /// [EtchStyle] to use for painting the element
   final EtchStyle etchStyle;
@@ -16,26 +15,42 @@ class EtchRect extends EtchElement {
   /// Rect bottom right in alignment terms
   Offset? _bottomRightAlignment;
 
-  EtchRect({
-    required Rect rect,
+  /// Radius of the rounded corners of the Rect
+  final double _radius;
+
+  EtchRRect({
+    required RRect rect,
     EtchStyle? etchStyle,
   })  : _rect = rect,
+        _radius = 0.0,
         etchStyle = etchStyle ?? EtchStyle();
 
-  EtchRect.alignment({
+  EtchRRect.alignment({
     required Offset topLeftAlignment,
     required Offset bottomRightAlignment,
+    double radius = 0.0,
     EtchStyle? etchStyle,
   })  : _topLeftAlignment = topLeftAlignment,
         _bottomRightAlignment = bottomRightAlignment,
+        _radius = radius,
         etchStyle = etchStyle ?? EtchStyle();
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.drawRect(
-      Rect.fromPoints(
-        _getEffectiveStart(size),
-        _getEffectiveEnd(size),
+    if (_rect != null) {
+      canvas.drawRRect(
+        _rect!,
+        etchStyle.paint,
+      );
+    }
+
+    canvas.drawRRect(
+      RRect.fromRectAndRadius(
+        Rect.fromPoints(
+          _getEffectiveStart(size),
+          _getEffectiveEnd(size),
+        ),
+        Radius.circular(_radius),
       ),
       etchStyle.paint,
     );
@@ -43,7 +58,7 @@ class EtchRect extends EtchElement {
 
   Offset _getEffectiveStart(Size size) {
     if (_rect != null) {
-      return _rect!.topLeft;
+      return _rect!.center - Offset(_rect!.width / 2, _rect!.height / 2);
     }
 
     var convUnits = _topLeftAlignment! + const Offset(1, 1);
@@ -55,7 +70,7 @@ class EtchRect extends EtchElement {
 
   Offset _getEffectiveEnd(Size size) {
     if (_rect != null) {
-      return _rect!.bottomRight;
+      return _rect!.center + Offset(_rect!.width / 2, _rect!.height / 2);
     }
 
     var convUnits = _bottomRightAlignment! + const Offset(1, 1);
@@ -71,7 +86,7 @@ class EtchRect extends EtchElement {
       return true;
     }
 
-    var e = oldElement as EtchRect;
+    var e = oldElement as EtchRRect;
 
     return _rect != e._rect ||
         etchStyle != e.etchStyle ||

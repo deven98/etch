@@ -2,16 +2,19 @@ import 'package:etch/src/components/path/etch_path_element.dart';
 import 'package:flutter/material.dart';
 
 /// Add a line to the path
-class EtchPathLine extends EtchPathElement {
+/// Relative paths are drawn with respect to the current point, not the origin
+/// The alignment constructor effectively uses the current point as origin and
+/// calculates alignment using the bounding size
+class EtchPathRelativeLineTo extends EtchPathElement {
   Offset? _point;
 
   Offset? _pointAlignment;
 
-  EtchPathLine({
+  EtchPathRelativeLineTo({
     required Offset point,
   }) : _point = point;
 
-  EtchPathLine.alignment({
+  EtchPathRelativeLineTo.alignment({
     required Offset pointAlignment,
   }) : _pointAlignment = pointAlignment;
 
@@ -30,7 +33,7 @@ class EtchPathLine extends EtchPathElement {
   @override
   void addToPath(Path path, Canvas canvas, Size size) {
     var p = _getEffectiveEnd(size);
-    path.lineTo(p.dx, p.dy);
+    path.relativeLineTo(p.dx, p.dy);
   }
 
   @override
@@ -39,7 +42,7 @@ class EtchPathLine extends EtchPathElement {
       return true;
     }
 
-    var e = oldElement as EtchPathLine;
+    var e = oldElement as EtchPathRelativeLineTo;
 
     return _point != e._point || _pointAlignment != e._pointAlignment;
   }

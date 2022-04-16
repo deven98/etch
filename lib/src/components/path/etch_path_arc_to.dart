@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'etch_path_element.dart';
 
+/// Adds an arc to the current path starting from the current point to the given point
 class EtchPathArcTo extends EtchPathElement {
   Rect? _rect;
 
