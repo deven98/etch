@@ -29,3 +29,7 @@
 
 * Added relative path objects and rounded rect 
 
+## 0.2.2
+
+* Corrected RRect drawing
+

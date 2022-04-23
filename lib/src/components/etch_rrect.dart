@@ -42,6 +42,7 @@ class EtchRRect extends EtchElement {
         _rect!,
         etchStyle.paint,
       );
+      return;
     }
 
     canvas.drawRRect(
